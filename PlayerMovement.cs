@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public float motionSpeed;
+    public RigidBody2D rb;
+    float max;
+    
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 }
