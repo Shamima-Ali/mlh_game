@@ -22,11 +22,11 @@ public class PlayerMovement : MonoBehaviour
           Jump();
       }
 
-      if (Mathf.Abs(max) > 0.05f)
+    if (Mathf.Abs(max) > 0.05f)
       {
           anim.SetBool("isRunning", true);
       }
-      else
+    else
       {
           anim.SetBool("isRunning", false);
       }
