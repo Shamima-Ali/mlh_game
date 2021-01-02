@@ -8,15 +8,30 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     float max;
     public float jumpforce = 20f;
+    public Transform feet;
+    public LayerMask groundLayers;
+
+    public Animator anim;
     
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
       max = Input.GetAxisRaw("Horizontal");
-      if (Input.GetButtonDown ("Jump"))
+      if (Input.GetButtonDown ("Jump") && IsGrounded())
       {
           Jump();
       }
+
+      if (Mathf.Abs(max) > 0.05f)
+      {
+          anim.SetBool("isRunning", true);
+      }
+      else
+      {
+          anim.SetBool("isRunning", false);
+      }
+
+      anim.SetBool("isGrounded", IsGrounded());
     }
 
     private void FixedUpdate() 
@@ -33,5 +48,19 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = movementV;
 
     } 
+
+    public bool IsGrounded()
+    {
+        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0.5f, groundLayers);
+
+        if (groundCheck != null)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
 
 }
