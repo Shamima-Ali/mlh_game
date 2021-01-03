@@ -67,12 +67,15 @@ public class PlayerMovement : MonoBehaviour
      void OnTriggerEnter2D(Collider2D col)
      {
          if (col.gameObject.layer == 9 || col.gameObject.layer == 10)
-         {        
+         {    
+             ScoreCode.scoreNumber = ScoreCode.scoreNumber - 5;
               Respawn();
          }
          else if (col.gameObject.layer == 11)
          {
+             ScoreCode.scoreNumber = ScoreCode.scoreNumber + 5;
              Destroy(col.gameObject);
+            
          }
      }
 
