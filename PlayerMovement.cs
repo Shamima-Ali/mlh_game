@@ -70,6 +70,10 @@ public class PlayerMovement : MonoBehaviour
          {        
               Respawn();
          }
+         else if (col.gameObject.layer == 11)
+         {
+             Destroy(col.gameObject);
+         }
      }
 
      public void Respawn()
