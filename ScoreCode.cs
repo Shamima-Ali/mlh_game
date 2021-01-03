@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class ScoreCode : MonoBehaviour
 {
     public static int scoreNumber = 0;
+    public GameObject WinText;
+    public float restart = 3f;
+
+
     Text score;
     // Start is called before the first frame update
     void Start()
@@ -16,10 +20,16 @@ public class ScoreCode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = "score: " + scoreNumber;
+        score.text = "score: " + scoreNumber +"/30";
         if (scoreNumber < 0)
         {
             FindObjectOfType<EndGameScript>().GameOver();
+        }
+
+        if(scoreNumber == 5)
+        {
+            WinText.SetActive(true);
+            StartCoroutine(FindObjectOfType<EndGameScript>().Restart());
         }
     }
 }
