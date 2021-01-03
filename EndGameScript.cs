@@ -14,13 +14,9 @@ public class EndGameScript : MonoBehaviour
         {
             Debug.Log("Game Overrrrr!");
             gameEnded = true;
-            if (ScoreCode.scoreNumber < 0 || LifeScript.lifeNumber <= 0)
-            {
-                Restart();
-            }else
-            {
-                Invoke("Restart", restartTime);
-            }
+          
+            Restart();
+           
 
             
         }

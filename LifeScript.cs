@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class LifeScript : MonoBehaviour
 {
     public static int lifeNumber = 3;
+    public GameObject DiedText;
+
     Text life;
     // Start is called before the first frame update
     void Start()
@@ -18,9 +20,10 @@ public class LifeScript : MonoBehaviour
     void Update()
     {
         life.text = "lives: " + lifeNumber;
-        if (lifeNumber < 0)
+        if (lifeNumber < 1)
         {
-            FindObjectOfType<EndGameScript>().GameOver();
+            DiedText.SetActive(true);
+            StartCoroutine(FindObjectOfType<EndGameScript>().Restart());
         }
     }
 }
