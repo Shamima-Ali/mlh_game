@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// some code from Blackthornprod
+
 public class PeopleFollow : MonoBehaviour
 {
     public float speed;

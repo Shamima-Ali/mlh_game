@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// some code from Brackeys, Muddy Wolf
 
 public class LifeScript : MonoBehaviour
 {

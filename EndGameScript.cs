@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+// some code from Brackeys, Muddy Wolf
+
 
 public class EndGameScript : MonoBehaviour
 {
