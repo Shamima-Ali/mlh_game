@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreCode : MonoBehaviour
+
+public class LifeScript : MonoBehaviour
 {
-    public static int scoreNumber = 0;
-    Text score;
+    public static int lifeNumber = 3;
+    Text life;
     // Start is called before the first frame update
     void Start()
     {
-        score = GetComponent<Text>();
+        life = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        score.text = "score: " + scoreNumber;
-        if (scoreNumber < 0)
+        life.text = "lives: " + lifeNumber;
+        if (lifeNumber < 0)
         {
             FindObjectOfType<EndGameScript>().GameOver();
         }

@@ -69,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
          if (col.gameObject.layer == 9 || col.gameObject.layer == 10)
          {    
              ScoreCode.scoreNumber = ScoreCode.scoreNumber - 5;
+             LifeScript.lifeNumber = LifeScript.lifeNumber - 1;
               Respawn();
          }
          else if (col.gameObject.layer == 11)
