@@ -20,13 +20,13 @@ public class ScoreCode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = "score: " + scoreNumber +"/30";
+        score.text = "score: " + scoreNumber +"/45";
         if (scoreNumber < 0)
         {
             FindObjectOfType<EndGameScript>().GameOver();
         }
 
-        if(scoreNumber == 5)
+        if(scoreNumber == 45)
         {
             WinText.SetActive(true);
             StartCoroutine(FindObjectOfType<EndGameScript>().Restart());
