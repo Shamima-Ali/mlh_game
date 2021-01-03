@@ -10,7 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpforce = 20f;
     public Transform feet;
     public LayerMask groundLayers;
-     
+    public Transform spawnPoint;
+
     public Animator anim;
 
     // Update is called once per frame
@@ -65,10 +66,15 @@ public class PlayerMovement : MonoBehaviour
    
      void OnTriggerEnter2D(Collider2D col)
      {
-         if (col.gameObject.layer == 9)
+         if (col.gameObject.layer == 9 || col.gameObject.layer == 10)
          {        
-              Destroy(gameObject);
+              Respawn();
          }
+     }
+
+     public void Respawn()
+     {
+         this.transform.position = spawnPoint.position;
      }
      
 }
